@@ -1,0 +1,138 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <!-- 
+    Taken from html5boilerplate, set the charset and X-UA-Compatible header.
+    The compatible header can be returned via the webserver to be a little faster.
+   -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Example One</title>
+
+  <style>
+    /* Styles would normally be in an external stylesheet (combined and minified) 
+     * I'm putting them here for simplicity sake. 
+     * Theory adapted from A List Apart Holy Grail article. 
+     */
+
+    body {
+      /* This technique fails for too small a page width so enforce a minimum. */
+      min-width: 608px;
+    }
+
+    /* Corrects `block` display not defined in IE 7/8/9 and Firefox 3. */
+    aside, footer, header, section { display: block; }
+
+    header, 
+    footer {
+      background-color: #ccc; /* just to make it stand out */
+    }
+
+    #content {
+      /* Add padding to the left and right to make room for the two sidebars. 
+       * The right padding has the center column padding added to it to adjust the center
+       * column width (100%) from growing too large from its padding. 
+       */
+      padding: 0 224px 0 180px;
+
+      min-height: 300px; /* just to spread it out a little bit */
+    }
+
+    /* This selector would not work for IE6. */
+    #content > * { 
+      float: left;
+      position: relative;
+    }
+
+    section.main-content {
+      padding: 0 12px;
+      width: 100%;
+
+      background-color: #cff; /* just to make it stand out */
+    }
+
+    aside.main {
+      /* Set the width to the required width (minus padding) for this column. */
+      width: 156px; 
+      padding: 0 12px;
+
+      /* Move to the right by the same as the width (+ center padding). 
+       * Because of relative position, this will place it in the #content padding. */
+      right: 204px; 
+
+      /* This will place this column at the top of the page. */
+      margin-left: -100%;
+
+      background-color: #fcf; /* just to make it stand out */ 
+    }
+
+    aside.secondary {
+      /* Set the width to the required width (minus padding) for this column. */
+      width: 176px;
+      padding: 0 12px;
+
+      /* Move to the right by the same as the width (+ center padding). */
+      margin-right: -224px;
+
+      background-color: #ffc; /* just to make it stand out */
+    }
+
+    footer {
+      clear: both;
+    }
+  </style>
+
+  <!-- 
+    Modernizr (mainly) is being used to enable html5 elements in older IE.
+    Html5 semantic tags aren't required, just make for better markup. 
+    Modernizr has to be loaded before the html to make the html5 elements work. 
+    Other javascript would be loaded at the bottom of the markup.
+  -->
+  <script src="js/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+  <div id="page">
+    <header>
+      <h1>This is a header</h1>
+    </header>
+
+    <div id="content">
+
+      <!-- The main content comes first for SEO/accessibility reasons. This makes our CSS more exotic. -->
+      <section class="main-content">
+        <p>
+          The middle column is liquid, expanding to fill the available space.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tellus risus, consequat ut consectetur et, condimentum sed leo. Donec sagittis risus sit amet tellus varius venenatis. Aenean placerat sem vitae felis ultrices sit amet pellentesque arcu semper. Vestibulum non eros erat, eu egestas quam. Integer viverra vehicula eros, in semper neque gravida eget. Fusce vulputate luctus adipiscing. Quisque lobortis fringilla nisi. In facilisis mauris justo. Maecenas volutpat iaculis enim eget accumsan. Vivamus iaculis, erat vel malesuada semper, odio metus ultrices metus, vitae interdum elit nisl vitae mi.
+        </p>
+        <p>
+          Duis sollicitudin quam id nisl mattis et gravida augue vestibulum. Nam scelerisque nibh eu urna tincidunt vel placerat risus accumsan. Phasellus non pulvinar magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam vel felis justo. Sed non orci urna. In hac habitasse platea dictumst.
+        </p>
+      </section>
+
+      <aside class="main">
+        <p>
+          The left column is fixed width: 180px.
+        </p>
+      </aside>
+      
+      <aside class="secondary">
+        <p>
+          The right column is fixed width: 200px.
+        </p>
+      </aside>
+
+    </div>
+    
+    <footer>
+      <p>This is the footer</p>
+    </footer>
+  </div>
+
+</body>
+</html>
